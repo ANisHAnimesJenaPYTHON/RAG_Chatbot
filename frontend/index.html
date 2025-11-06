@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Chatbot - Google Docs Integration</title>
+    <link rel="stylesheet" href="/frontend/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🤖 RAG Chatbot</h1>
+            <p class="subtitle">Intelligent document assistant powered by AI</p>
+            <p class="subtitle" style="font-size: 0.95em; margin-top: 10px; opacity: 0.85;">Ask questions about your Google Docs and get instant answers</p>
+        </header>
+
+        <!-- Authentication Section -->
+        <div id="auth-section" class="section">
+            <div class="auth-card">
+                <h2>Sign In Required</h2>
+                <p>Please sign in with your Google account to access your documents.</p>
+                <button id="signin-btn" class="btn btn-primary">Sign in with Google</button>
+            </div>
+        </div>
+
+        <!-- Main Application Section -->
+        <div id="app-section" class="section" style="display: none;">
+            <!-- Documents Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>📄 Your Google Docs</h2>
+                    <button id="refresh-docs-btn" class="btn btn-secondary">Refresh</button>
+                </div>
+                <div id="documents-loading" class="loading">Loading documents...</div>
+                <div id="documents-container" class="documents-container"></div>
+                <div class="action-bar">
+                    <button id="add-selected-btn" class="btn btn-primary" disabled>
+                        Add Selected to Knowledge Base
+                    </button>
+                    <span id="selected-count" class="selected-count">0 selected</span>
+                </div>
+            </div>
+
+            <!-- Knowledge Base Section -->
+            <div class="card">
+                <div class="card-header">
+                    <h2>📚 Knowledge Base</h2>
+                    <button id="clear-kb-btn" class="btn btn-secondary" style="font-size: 0.85em; padding: 8px 16px;">Clear All</button>
+                </div>
+                <div id="kb-container" class="kb-container">
+                    <p class="empty-state">No documents in knowledge base yet.</p>
+                </div>
+            </div>
+
+            <!-- Chat Section -->
+            <div class="card chat-card">
+                <div class="card-header">
+                    <h2>💬 Chat</h2>
+                </div>
+                <div id="chat-container" class="chat-container">
+                    <div class="welcome-message">
+                        <p>👋 Welcome! I'm your AI document assistant</p>
+                        <p>I can help you understand, summarize, and answer questions about your Google Docs.</p>
+                        <p class="hint">💡 Try asking: "What is the main topic of my documents?" or "Summarize the key points"</p>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input 
+                        type="text" 
+                        id="chat-input" 
+                        placeholder="Type your question here..." 
+                        disabled
+                    >
+                    <button id="send-btn" class="btn btn-primary" disabled>Send</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/frontend/app.js"></script>
+</body>
+</html>
+
