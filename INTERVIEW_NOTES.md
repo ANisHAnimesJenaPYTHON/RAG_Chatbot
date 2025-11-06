@@ -77,6 +77,4 @@
 
 ---
 
-### Print to PDF
-- Open this file in your editor/preview → Print → Save as PDF.
-- Or open on GitHub and use your browser’s Print → Save as PDF.
+
